@@ -59,24 +59,31 @@ I wanted to see if it was possible to run the same firmware on a regular ESP32-W
 ## 💾 Firmware
 
 You’ll need the official **Panda Knomi firmware**, as it is closed source.  
-You can find it in the [PandaKnomi GitHub repository](https://github.com/bigtreetech/PandaKnomi) – version **v1.0.3.1** is recommended.  
+You can find it in the [PandaKnomi GitHub repository](https://github.com/bigtreetech/PandaKnomi) – version **v1.0.5** is recommended.  
 Other versions have not been tested.
 
 ---
 
 ## 🔥 Flashing the Firmware
 
+### via ESPTool
+
 1. Download and install [esptool](https://github.com/espressif/esptool).
-2. Place all firmware files (`bootloader.bin`, `partitions.bin`, `panda_knomi_v1.0.3.1.bin`, `images.img`) into the same folder.
+2. Place all firmware files (`bootloader.bin`, `partitions.bin`, `panda_knomi_v1.0.5.bin`, `images.img`) into the same folder.
 3. Flash the firmware using the following command:
 
     ```bash
     esptool.py write_flash \
       0x1000 bootloader.bin \
       0x8000 partitions.bin \
-      0x10000 panda_knomi_v1.0.3.1.bin \
+      0x10000 panda_knomi_v1.0.5.bin \
       0x240000 images.img \
       --flash_size 4MB
     ```
+
+### via WEB Flasher
+
+1. Go to https://esptool.spacehuhn.com/
+2. use this settings ![weblfash](https://github.com/drbeat/PandaKnomiDIY/blob/main/web%20flash.png)
 
 ---
